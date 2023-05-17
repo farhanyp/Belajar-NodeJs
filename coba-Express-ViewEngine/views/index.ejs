@@ -1,0 +1,12 @@
+<h1>ini halaman index</h1>
+
+<% if (mahasiswa.length===0) { %>
+    <h2>Data mahasiswa tidak ada</h2>
+    <% }else{ %>
+        <% mahasiswa.forEach(mhs=> { %>
+            <ul>
+                <li>Nama: <%= mhs.nama %></li>
+                <li>Email: <%= mhs.email %></li>
+            </ul>
+        <% }) %>
+    <% } %>

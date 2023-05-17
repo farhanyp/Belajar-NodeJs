@@ -1,0 +1,20 @@
+
+<div class="card">
+    <% if (detail) { %>
+        <div class="card-body">
+            <h5 class="card-title">Nama: <%= detail.nama %></h5>
+            <p class="card-text">No Hp: <%= detail.nohp %></p>
+            <p class="card-text">Email: <%= detail.email %></p>
+            <form method="POST" action="/contact?_method=DELETE">
+                <input type="hidden" name="_id" value="<%= detail._id %>">
+                <button type="submit" class="btn btn-danger badge">Delete</button>
+            </form>
+            <a href="/contact/edit/<%= detail._id %>" class="btn btn-primary badge">Edit</a>
+          </div>
+    <% }else{%>
+        <div class="alert alert-danger" role="alert">
+            Tidak ada data yang tersedia
+        </div>
+    <% } %>
+  </div>
+  

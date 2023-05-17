@@ -1,0 +1,17 @@
+
+<div class="card">
+    <% if (detail) { %>
+        <div class="card-body">
+            <h5 class="card-title">Nama: <%= detail.nama %></h5>
+            <p class="card-text">No Hp: <%= detail.nohp %></p>
+            <p class="card-text">Email: <%= detail.email %></p>
+            <a href="/contact/delete/<%= detail.nama %>">Delete</a>
+            <a href="/contact/edit/<%= detail.nama %>">Edit</a>
+          </div>
+    <% }else{%>
+        <div class="alert alert-danger" role="alert">
+            Tidak ada data yang tersedia
+        </div>
+    <% } %>
+  </div>
+  
