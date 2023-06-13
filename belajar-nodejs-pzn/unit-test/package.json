@@ -9,6 +9,7 @@
     "start": "node ./index.js"
   },
   "jest": {
+    "verbose": true,
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
     }
