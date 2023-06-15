@@ -12,7 +12,8 @@
     "verbose": true,
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
-    }
+    },
+    "collectCoverage": true
   },
   "keywords": [],
   "author": "",
