@@ -1,0 +1,41 @@
+import { logger } from "../application/logging.js"
+import addressService from "../service/address-service.js"
+
+const create = async (req, res, next) => {
+
+    try{
+        const user = req.user
+        const contactId = req.params.contactId
+        const request = req.body
+
+        const result = await addressService.create(user, contactId, request)
+        res.status(200).json({
+            data: result
+        })
+    }catch(e){
+        next(e)
+    }
+}
+
+
+const get = async (req, res, next) => {
+    try{
+
+        const user = req.user
+        const contactId = req.params.contactId
+        const addressId = req.params.addressId
+
+        const result = addressService.get(user, contactId, addressId)
+        res.status(200).json({
+            data: result
+        })
+
+    }catch(e){
+        next(e)
+    }
+}
+
+export default{
+    create,
+    get
+}
